@@ -2,6 +2,8 @@
 
 Python analysis of 60+ years of US inflation and interest-rate data (1962–2025), built to test whether the policy rate reacts to inflation, whether rate changes signal future inflation, and how inflation and rates combine into a single view of macro conditions. Data is pulled live from the Federal Reserve Economic Data (FRED) API.
 
+![Inflation versus the federal funds rate, 1962 to 2025](images/inflation_vs_fed_funds.png)
+
 ## Data
 
 Four monthly series from FRED:
@@ -34,11 +36,17 @@ Daily Treasury yields were resampled to monthly averages so all four series shar
 
 **The policy rate tracks past inflation closely.** The fed funds rate correlates around 0.70 with core inflation from 3, 6, and 12 months earlier (0.73, 0.73, 0.70). Headline inflation shows a similar but slightly lower relationship (about 0.67 to 0.70). This is consistent with policy responding to inflation that has already appeared in the data, and core inflation lines up with the rate a little more consistently than headline.
 
+![Correlation between the fed funds rate and inflation from N months earlier](images/rate_inflation_correlations.png)
+
 **Rate changes do not signal future inflation in this setup.** Monthly changes in the policy rate correlate weakly with inflation 3 to 12 months ahead (roughly 0.03 to 0.13). The forward-looking relationship is far weaker than the backward-looking one: policy reacting to inflation comes through clearly, while any effect of rate moves pushing inflation forward does not show up in a plain correlation.
 
 **Headline inflation is noisier than core.** Headline CPI swings more than core across the full period, which is expected given food and energy volatility. Core gives a steadier read on underlying cost pressure, which is also why it aligns better with the policy rate.
 
+![Headline versus core inflation, year over year](images/headline_vs_core_inflation.png)
+
 **The combined indicator** built from standardized core inflation and the rate level peaks during the early-1980s inflation period and again in 2021–2023, and sits below its long-run average through the low-rate 2010s.
+
+![Standardized composite of inflation and interest-rate conditions over time](images/financial_stress_index.png)
 
 ## Limitations
 
@@ -55,13 +63,13 @@ Python, pandas, NumPy, Matplotlib, Seaborn, scikit-learn, fredapi.
 ## Running it
 
 1. Install dependencies:
-   ```bash
+```bash
    pip install -r requirements.txt
-   ```
+```
 2. Get a free FRED API key from the FRED website.
 3. Create a local `my_config.py` containing your key:
-   ```python
+```python
    FRED_API_KEY = "your_key_here"
-   ```
+```
    This file is listed in `.gitignore` and is kept out of version control. Never commit your API key.
 4. Run the notebook top to bottom.
