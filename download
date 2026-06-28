@@ -1,0 +1,15 @@
+# Secrets — never commit your FRED API key
+my_config.py
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
