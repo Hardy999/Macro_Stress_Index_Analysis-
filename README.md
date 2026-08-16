@@ -1,6 +1,6 @@
 # Macro Stress Analysis: How Interest Rates Track Inflation
 
-Python analysis of 60+ years of US inflation and interest-rate data (1962–2025), built to test whether the policy rate reacts to inflation, whether rate changes signal future inflation, and how inflation and rates combine into a single view of macro conditions. Data is pulled live from the Federal Reserve Economic Data (FRED) API.
+Python analysis of 60+ years of US inflation and interest-rate data (1962â€“2025), built to test whether the policy rate reacts to inflation, whether rate changes signal future inflation, and how inflation and rates combine into a single view of macro conditions. Data is pulled live from the Federal Reserve Economic Data (FRED) API.
 
 ![Inflation versus the federal funds rate, 1962 to 2025](images/inflation_vs_fed_funds.png)
 
@@ -44,7 +44,7 @@ Daily Treasury yields were resampled to monthly averages so all four series shar
 
 ![Headline versus core inflation, year over year](images/headline_vs_core_inflation.png)
 
-**The combined indicator** built from standardized core inflation and the rate level peaks during the early-1980s inflation period and again in 2021–2023, and sits below its long-run average through the low-rate 2010s.
+**The combined indicator** built from standardized core inflation and the rate level peaks during the early-1980s inflation period and again in 2021â€“2023, and sits below its long-run average through the low-rate 2010s.
 
 ![Standardized composite of inflation and interest-rate conditions over time](images/financial_stress_index.png)
 
@@ -55,6 +55,15 @@ This is exploratory analysis, and the framing matters:
 * The relationships are **correlational, not causal.** A high correlation between the rate and past inflation is consistent with policy reacting to inflation, but the analysis does not prove that mechanism or rule out other drivers.
 * The **composite indicator is descriptive, not validated.** It has not been tested against any outcome such as recessions, credit defaults, or market drawdowns, so it summarizes conditions rather than predicting stress.
 * Correlation here is **linear and pairwise.** It does not capture nonlinear effects, regime changes, or variables outside the four series used.
+
+## Repository contents
+
+| File | What it is |
+|---|---|
+| `Macro_Stress_Index_Analysis.ipynb` | The analysis, end to end â€” FRED pull, cleaning, lag analysis, composite index |
+| `Macro_Stress_Index_Analysis.pdf` | Rendered notebook with all outputs, readable without running anything |
+| `images/` | The four charts used above |
+| `requirements.txt` | Python dependencies |
 
 ## Tools
 
@@ -72,4 +81,4 @@ Python, pandas, NumPy, Matplotlib, Seaborn, scikit-learn, fredapi.
    FRED_API_KEY = "your_key_here"
 ```
    This file is listed in `.gitignore` and is kept out of version control. Never commit your API key.
-4. Run the notebook top to bottom.
+4. Run [`Macro_Stress_Index_Analysis.ipynb`](Macro_Stress_Index_Analysis.ipynb) top to bottom. A rendered copy of the full run, with all outputs, is in [`Macro_Stress_Index_Analysis.pdf`](Macro_Stress_Index_Analysis.pdf).

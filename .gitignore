@@ -1,0 +1,43 @@
+# --- Video: never published (size + third-party material) ---
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# --- Office lock / temp files ---
+~$*
+*.tmp
+*.bak
+
+# --- IDE and editor state ---
+.vs/
+.vscode/
+.idea/
+*.ssmssln
+*.ssmssqlproj
+*.suo
+*.user
+
+# --- Notebook checkpoints ---
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# --- Power BI temp ---
+*.pbix.tmp
+TempState/
+
+# --- OS cruft ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local FRED API key â€” never commit
+my_config.py
